@@ -2,21 +2,13 @@ package com.kz.siberianwellness;
 
 import com.codeborne.selenide.*;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.condition.DisabledIfSystemProperties;
-import org.openqa.selenium.*;
 
 import java.io.*;
-import java.time.Duration;
 
-import static com.codeborne.selenide.CollectionCondition.*;
-import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class Main {
+public class Test {
 
 @BeforeAll
 public static void beforeAllMethod() {
@@ -24,7 +16,7 @@ public static void beforeAllMethod() {
     Configuration.baseUrl = "https://demoqa.com";
 }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void fillForm() {
         open("/automation-practice-form");
 
@@ -38,7 +30,7 @@ public static void beforeAllMethod() {
 
         $("[id=\"userNumber\"]").setValue("7955511448");
 
-        Main.fillData();
+        Test.fillData();
 
         $("[id=\"subjectsInput\"]").setValue("Arts").pressEnter();
 
