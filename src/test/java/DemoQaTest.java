@@ -51,27 +51,26 @@ public class DemoQaTest {
         checkTable();
     }
 
-    private static void closedBanners() {
+    private void closedBanners() {
         Selenide.executeJavaScript("$('#fixedban').remove()");
         Selenide.executeJavaScript("$('footer').remove()");
     }
 
-    private static void checkTable() {
+    private void checkTable() {
         $(".modal-header").shouldHave(text("Thanks for submitting the form"));
-        $("table").shouldHave(
-                text("Test1"),
-                text("Test2"),
-                text("Test@mail.com"),
-                text("Other"),
-                text("7955511448"),
-                text("17 May,1993"),
-                text("Arts"),
-                text("Music"),
-                text("Far far away"),
-                text("Haryana Karnal"));
+        $("table").shouldHave(text("Test1"));
+        $("table").shouldHave(text("Test2"));
+        $("table").shouldHave(text("Test@mail.com"));
+        $("table").shouldHave(text("Other"));
+        $("table").shouldHave(text("7955511448"));
+        $("table").shouldHave(text("17 May,1993"));
+        $("table").shouldHave(text("Arts"));
+        $("table").shouldHave(text("Music"));
+        $("table").shouldHave(text("Far far away"));
+        $("table").shouldHave(text("Haryana Karnal"));
     }
 
-    private static void fillStateAndCity() {
+    private void fillStateAndCity() {
         $("[id=\"state\"]").click();
         $("[id=\"react-select-3-option-2\"]").click();
 
@@ -79,13 +78,11 @@ public class DemoQaTest {
         $("[id=\"react-select-4-option-0\"]").click();
     }
 
-
-    public static void fillData() {
+    public void fillData() {
         $("[id=\"dateOfBirthInput\"]").click();
         $(".react-datepicker__month-select").selectOption("May");
         $(".react-datepicker__year-select").selectOptionByValue("1993");
         $(".react-datepicker__day--017:not(.react-datepicker__day--outside-month)").click();
     }
-
 
 }
