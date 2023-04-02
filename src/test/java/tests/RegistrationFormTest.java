@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
@@ -14,31 +14,19 @@ public class RegistrationFormTest extends TestBase {
     void registrationTest() {
 
         registrationPage.openPage()
-
+                .killBanner()
                 .setFirstName("Test1")
-
                 .setLastName("Test2")
-
                 .setEmail("Test@mail.com")
-
                 .setGender("Male")
-
                 .setPhone("7955511448")
-
                 .setBirthDate("17", "May", "1993")
-
                 .setSubjects("Arts")
-
                 .setHobbies("Sports")
-
                 .uploadPicture(file)
-
                 .setAddress("Far far away")
-
                 .setState("Haryana")
-
                 .setCity("Panipat")
-
                 .clickSubmit();
 
     registrationPage
