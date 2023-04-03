@@ -33,7 +33,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage killBanner(){
+    public RegistrationPage closeBanner(){
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
