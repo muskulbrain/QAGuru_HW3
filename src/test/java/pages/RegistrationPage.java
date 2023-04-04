@@ -19,6 +19,7 @@ public class RegistrationPage {
             emailInput = $("#userEmail"),
             genderSelect = $("#genterWrapper"),
             phoneInput = $("#userNumber"),
+            birthDateInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
             hobbiesSelect = $("#hobbiesWrapper"),
             pictureUpload = $("#uploadPicture"),
@@ -65,12 +66,13 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setBirthDate(String day, String month, String year) {
+        birthDateInput.click();
         calendarComponents.setDate(day, month, year);
         return this;
     }
 
-    public RegistrationPage setSubjects(String value) {
-        subjectsInput.setValue(value).pressEnter();
+    public RegistrationPage setSubject(String subjects) {
+        subjectsInput.setValue(subjects).pressEnter();
         return this;
     }
 
@@ -79,7 +81,12 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage uploadPicture(File file) {
+    /*public RegistrationPage setUploadPicture(File file) {
+        pictureUpload.uploadFile(file);
+        return this;pictureUpload.uploadFile(file);
+    }*/
+
+    public RegistrationPage setUploadPicture(File file) {
         pictureUpload.uploadFile(file);
         return this;
     }
@@ -105,9 +112,17 @@ public class RegistrationPage {
         submitBtn.click();
     }
 
-    public RegistrationPage verifyResult(String key, String value) {
-        registrationCheck.verifyResult(key, value);
+    public RegistrationPage verifyResultsModalAppears() {
+        registrationCheck.verifyModalAppears();
+
         return this;
     }
+
+    public RegistrationPage verifyResults(String key, String value) {
+        registrationCheck.verifyResult(key, value);
+
+        return this;
+    }
+
 }
 

@@ -18,16 +18,16 @@ public class RegistrationWithFakerTests extends TestBase {
                 .setEmail(email)
                 .setGender(gender)
                 .setPhone(mobile)
-                .setBirthDate(day, month, year)
+                .setBirthDate(dayOfBirthDate, monthOfBirthDate, yearOfBirthDate)
                 .setSubject(subject)
                 .setHobbies(hobbies)
-                .setUploadPicture(picture)
+                .setUploadPicture(file)
                 .setAddress(address)
                 .setState(state)
                 .setCity(city)
                 .clickSubmit();
 
-        registrationPage
+        registrationPage.verifyResultsModalAppears()
                 .verifyResults("Student Name", firstName + " " + lastName)
                 .verifyResults("Student Email", email)
                 .verifyResults("Gender", gender)
